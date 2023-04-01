@@ -41,18 +41,19 @@ jobs:
     - name: Retain only build files
       run: find . -mindepth 1 -maxdepth 1 ! -name 'build' ! -name '.git' ! -name '.gitignore' -exec rm -r {} \; && cp -R build/* . && rm -r build
 
-    - name: Configure Git
+    - name: Set Git author as GitHub Actions and commit
+      # note: if there are no changes this will fail because there is nothing to commit
       run: |
         git config user.name "GitHub Actions"
         git config user.email "github-actions@users.noreply.github.com"
-
-    - name: Commit and push built files
-      run: | # if there are no changes and nothing to commit this will fail
         git add .
         git commit -m "Update build files [skip ci]"
 
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
+        # reminder for generating a Personal Access Token:
+        # GitHub avatar -> Settings -> Developer settings (bottom of left sidebar)
+        # Then in repo settings -> Secrets and variables -> Actions -> then add the PAT to Repository secrets
         github_token: ${{ secrets.GH_PAT }}
         branch: deploy
