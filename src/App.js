@@ -1,21 +1,22 @@
-import logo from './logo.svg';
+import restaurantLogo from './restaurant-logo.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={restaurantLogo} className="App-logo" alt="logo" />
         <p>
-          Fourside Cafe - 6
+          Fourside Cafe - 7
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.flaticon.com/free-icons/dinner"
           target="_blank"
           rel="noopener noreferrer"
+          title="dinner icons"
         >
-          Learn React
+          Dinner icons created by monkik - Flaticon
         </a>
       </header>
     </div>
