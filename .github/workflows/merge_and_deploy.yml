@@ -1,9 +1,7 @@
-name: Node.js CI
+name: Merge to main branch and copy build files to deploy branch
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
