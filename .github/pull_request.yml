@@ -1,4 +1,4 @@
-name: Merge to main branch and copy build files to deploy branch
+name: Pull requests for main branch
 
 on:
   # push:
