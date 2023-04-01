@@ -38,10 +38,8 @@ jobs:
         git fetch
         git checkout -B deploy origin/deploy || git checkout -b deploy
 
-    - name: Copy built files
-      run: |
-        git ls-files | grep -v '^\.' | xargs rm -r
-        cp -R build/* .
+    - name: Retain only build files
+      run: find . -mindepth 1 -maxdepth 1 ! -name 'build' -exec rm -r {} \; && cp -R build/* . && rm -r build
 
     - name: Configure Git
       run: |
