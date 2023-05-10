@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={restaurantLogo} className="App-logo" alt="logo" />
         <p>
-          Fourside Cafe - 7
+          Fourside Cafe - 8
         </p>
         <a
           className="App-link"
